@@ -30,46 +30,52 @@ const images = [
 </script>
 
 <template>
-  <div class="text-white bg-brown">
-    <div class="flex justify-center">
-      <div class="flex items-center">
-        <ul class="flex items-center">
-          <li v-for="flag in flags" :key="flag.lang" class="m-1">
-            <button
-              class="flex items-center justify-center w-8 h-8 rounded-full"
-            >
-              <img
-                :src="getImageUrl(flag.url)"
-                :alt="flag.lang"
-                class="object-cover w-full h-full rounded-full"
-              />
-            </button>
-          </li>
-        </ul>
-        <button class="search"></button>
+  <div class="text-white bg-brown sm:flex">
+    <div class="py-1 v-container">
+      <div class="flex justify-center">
+        <div class="flex items-center sm:flex-col sm:items-center md:flex-row">
+          <ul class="flex items-center">
+            <li v-for="flag in flags" :key="flag.lang" class="m-1">
+              <button
+                class="flex items-center justify-center w-8 h-8 rounded-full"
+              >
+                <img
+                  :src="getImageUrl(flag.url)"
+                  :alt="flag.lang"
+                  class="object-cover w-full h-full rounded-full"
+                />
+              </button>
+            </li>
+          </ul>
+          <button class="search"></button>
+        </div>
       </div>
     </div>
-    <div class="flex justify-center">
-      <div class="flex items-center">
-        <ul class="flex items-center">
-          <li v-for="image in images" :key="image.name" class="m-1">
-            <button
-              class="flex items-center justify-center w-8 h-8 rounded-full"
-            >
-              <img
-                :src="getImageUrl(image.url)"
-                :alt="image.name"
-                class="object-cover w-full h-full rounded-full"
-              />
+    <div class="py-1 v-container">
+      <div class="flex justify-center">
+        <div class="flex items-center sm:flex-col sm:items-center md:flex-row">
+          <ul class="flex items-center">
+            <li v-for="image in images" :key="image.name" class="m-1">
+              <button
+                class="flex items-center justify-center w-8 h-8 rounded-full"
+              >
+                <img
+                  :src="getImageUrl(image.url)"
+                  :alt="image.name"
+                  class="object-cover w-full h-full rounded-full"
+                />
+              </button>
+            </li>
+          </ul>
+          <div class="flex items-center">
+            <button class="m-1">
+              <icon-eye class="w-8 h-7" />
             </button>
-          </li>
-        </ul>
-        <button class="m-1">
-          <icon-eye class="w-8 h-7" />
-        </button>
-        <button class="m-1">
-          <icon-mobile class="w-8 h-7" />
-        </button>
+            <button class="m-1">
+              <icon-mobile class="w-8 h-7" />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
