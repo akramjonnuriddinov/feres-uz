@@ -1,8 +1,9 @@
 <script setup lang="ts">
-const links = [
+const links = ref([
   {
     name: 'Home',
     path: '/',
+    is_show: false,
     innerLinks: [
       {
         name: '',
@@ -12,7 +13,8 @@ const links = [
   },
   {
     name: 'About society',
-    path: '#',
+    path: '',
+    is_show: false,
     innerLinks: [
       {
         name: 'History of JSC "Fergana Regional Electric Networks Enterprise',
@@ -70,7 +72,8 @@ const links = [
   },
   {
     name: 'Corporate Governance',
-    path: '#',
+    path: '',
+    is_show: false,
     innerLinks: [
       {
         name: 'Voting results and adopted decisions of the general meeting of shareholders',
@@ -148,7 +151,8 @@ const links = [
   },
   {
     name: 'Interactive services',
-    path: '#',
+    path: '',
+    is_show: false,
     innerLinks: [
       {
         name: 'Surveying public opinion and discussing issues related to community activities',
@@ -174,7 +178,8 @@ const links = [
   },
   {
     name: 'News',
-    path: '#',
+    path: '',
+    is_show: false,
     innerLinks: [
       {
         name: 'News',
@@ -184,7 +189,8 @@ const links = [
   },
   {
     name: 'Info',
-    path: '#',
+    path: '',
+    is_show: false,
     innerLinks: [
       {
         name: 'Info',
@@ -195,6 +201,7 @@ const links = [
   {
     name: 'Connection',
     path: '/connection',
+    is_show: false,
     innerLinks: [
       {
         name: '',
@@ -202,15 +209,17 @@ const links = [
       },
     ],
   },
-]
+])
 
 const isInnerLinkLength = (link: any) => {
   return link.innerLinks[0].name.length > 0
 }
 
-const isOpen = ref(false)
-const toggleDropDown = (id: any) => {
-  isOpen.value = !isOpen.value
+const toggleDropDown = (index: any) => {
+  links.value.forEach((link: any, link_idx) => {
+    if (index != link_idx) link.is_show = false
+  })
+  links.value[index].is_show = !links.value[index].is_show
 }
 </script>
 
@@ -224,29 +233,31 @@ const toggleDropDown = (id: any) => {
           <icon-bars class="w-[30px] h-[30px]" />
         </button>
         <ul class="flex flex-col lg:justify-center lg:flex-row lg:relative">
-          <li v-for="link in links" :key="link.name" class="">
+          <li v-for="(link, index) in links" :key="link.name" class="">
             <nuxt-link
               :to="link.path"
-              @click="toggleDropDown"
+              @click="toggleDropDown(index)"
               :class="{
                 'dropdown-toggle': isInnerLinkLength(link),
               }"
-              class="inline-block py-2 lg:px-2 nav-link"
+              class="inline-block py-2 cursor-pointer lg:px-2 nav-link"
               >{{ link.name }}</nuxt-link
             >
-            <ul
-              v-if="isInnerLinkLength(link)"
-              :class="{ hidden: !isOpen }"
-              class="min-w-fit max-w-fit bg-brown border border-[#00000026] py-2 rounded lg:absolute"
-            >
-              <li v-for="innerLink in link.innerLinks" :key="innerLink.name">
-                <nuxt-link
-                  :to="innerLink.path"
-                  class="block py-1 px-[1.5rem] whitespace-nowrap"
-                  >{{ innerLink.name }}</nuxt-link
-                >
-              </li>
-            </ul>
+            <transition>
+              <ul
+                v-if="isInnerLinkLength(link)"
+                :class="{ hidden: !link.is_show }"
+                class="min-w-fit max-w-fit bg-brown border border-[#00000026] py-2 rounded lg:absolute"
+              >
+                <li v-for="innerLink in link.innerLinks" :key="innerLink.name">
+                  <nuxt-link
+                    :to="innerLink.path"
+                    class="block py-1 px-[1.5rem] whitespace-nowrap"
+                    >{{ innerLink.name }}</nuxt-link
+                  >
+                </li>
+              </ul>
+            </transition>
           </li>
         </ul>
       </nav>
@@ -254,7 +265,7 @@ const toggleDropDown = (id: any) => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .dropdown-toggle::after {
   display: inline-block;
   width: 0;
@@ -268,8 +279,13 @@ const toggleDropDown = (id: any) => {
   border-left: 0.3em solid transparent;
 }
 
-.nav-link:hover + ul {
-  display: block !important;
-  z-index: 100;
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
