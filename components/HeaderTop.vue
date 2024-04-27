@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { openMobile } from '@/composables/openMobile'
 const flags = [
   {
     url: 'flags/uz.png',
@@ -71,7 +72,7 @@ const images = [
             <button class="m-1">
               <icon-eye class="w-8 h-7" />
             </button>
-            <button class="m-1">
+            <button @click.prevent="openMobile" class="m-1">
               <icon-mobile class="w-8 h-7" />
             </button>
           </div>

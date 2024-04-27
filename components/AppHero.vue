@@ -81,11 +81,11 @@ const onSlideChange = () => {}
             width="100%"
             height="100%"
           />
-          <p
+          <h2
             class="absolute mb-8 font-medium text-[32px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           >
             {{ slide.text }}
-          </p>
+          </h2>
           <nuxt-link
             :to="slide.path"
             class="absolute px-4 py-2 font-medium text-center transition-all top-[58%] duration-200 -translate-x-1/2 -translate-y-1/2 border rounded-md border-brown read-more whitespace-nowrap left-1/2 hover:bg-brown"
