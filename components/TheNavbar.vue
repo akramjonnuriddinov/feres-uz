@@ -265,7 +265,7 @@ const toggleDropDown = (index: any) => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .navbar {
   box-shadow: 0px 1px 5px 0px rgba(55, 55, 55, 0.3);
 }
@@ -284,7 +284,7 @@ const toggleDropDown = (index: any) => {
 
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .v-enter-from,
