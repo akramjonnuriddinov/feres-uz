@@ -61,8 +61,9 @@ const onSlideChange = () => {}
       @swiper="onSwiper"
       :pagination="true"
       :draggable="true"
+      :speed="2000"
       :autoplay="{
-        delay: 250000,
+        delay: 3500,
         disableOnInteraction: false,
       }"
     >
