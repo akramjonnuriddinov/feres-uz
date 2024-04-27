@@ -2,15 +2,15 @@
 import { openMobile } from '@/composables/openMobile'
 const flags = [
   {
-    url: 'flags/uz.png',
+    url: 'uz.png',
     lang: 'uz',
   },
   {
-    url: 'flags/ru.png',
+    url: 'ru.png',
     lang: 'ru',
   },
   {
-    url: 'flags/en.png',
+    url: 'en.png',
     lang: 'en',
   },
 ]
@@ -41,7 +41,7 @@ const images = [
                 class="flex items-center justify-center w-8 h-8 rounded-full"
               >
                 <img
-                  :src="getImageUrl(flag.url)"
+                  :src="flag.url"
                   :alt="flag.lang"
                   class="object-cover w-full h-full rounded-full"
                 />
