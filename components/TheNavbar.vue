@@ -224,7 +224,7 @@ const toggleDropDown = (index: any) => {
 </script>
 
 <template>
-  <div class="text-white bg-brown lg:sticky lg:z-50 lg:top-0">
+  <div class="w-full text-white z-100 navbar bg-brown">
     <div class="v-container">
       <nav class="px-4 py-2">
         <button
@@ -266,6 +266,9 @@ const toggleDropDown = (index: any) => {
 </template>
 
 <style>
+.navbar {
+  box-shadow: 0px 1px 5px 0px rgba(55, 55, 55, 0.3);
+}
 .dropdown-toggle::after {
   display: inline-block;
   width: 0;
