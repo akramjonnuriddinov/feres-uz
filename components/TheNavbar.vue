@@ -268,10 +268,6 @@ const toggleDropDown = (id: any) => {
   border-left: 0.3em solid transparent;
 }
 
-* {
-  transition: all 0.2s ease !important;
-}
-
 .nav-link:hover + ul {
   display: block !important;
   z-index: 100;

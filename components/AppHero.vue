@@ -144,6 +144,7 @@ const onSlideChange = () => {}
   display: flex;
   justify-content: center;
   gap: 20px;
+  z-index: 1000;
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {

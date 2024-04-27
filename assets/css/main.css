@@ -55,6 +55,12 @@ body {
   font-weight: 400;
 }
 
+@layer components {
+  .title {
+    @apply font-medium leading-[1.2] text-[#373737] text-[32px];
+  }
+}
+
 @layer base {
   .v-container {
     width: 100%;
