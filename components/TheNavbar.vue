@@ -219,7 +219,7 @@ const toggleDropDown = (id: any) => {
     <div class="v-container">
       <nav class="px-4 py-2">
         <button class="px-2 py-1 bg-blue-400 rounded-md lg:hidden">OK</button>
-        <ul class="flex flex-col lg:flex-row">
+        <ul class="flex flex-col lg:justify-center lg:flex-row">
           <li v-for="link in links" :key="link.name" class="">
             <nuxt-link
               :to="link.path"
