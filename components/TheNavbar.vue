@@ -269,7 +269,7 @@ const toggleDropDown = (id: any) => {
 }
 
 * {
-  transition: all 4s ease !important;
+  transition: all 0.2s ease !important;
 }
 
 .nav-link:hover + ul {
