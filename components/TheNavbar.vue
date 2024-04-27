@@ -224,7 +224,7 @@ const toggleDropDown = (index: any) => {
 </script>
 
 <template>
-  <div class="w-full text-white z-100 navbar bg-brown">
+  <div id="navbar" class="w-full text-white z-100 navbar bg-brown">
     <div class="v-container">
       <nav class="px-4 py-2">
         <button
@@ -247,7 +247,7 @@ const toggleDropDown = (index: any) => {
               <ul
                 v-if="isInnerLinkLength(link)"
                 :class="{ hidden: !link.is_show }"
-                class="min-w-fit max-w-fit bg-brown border border-[#00000026] py-2 rounded lg:absolute"
+                class="min-w-fit max-h-[500px] overflow-auto max-w-fit bg-brown border border-[#00000026] py-2 rounded lg:absolute"
               >
                 <li v-for="innerLink in link.innerLinks" :key="innerLink.name">
                   <nuxt-link
@@ -290,5 +290,17 @@ const toggleDropDown = (index: any) => {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
 }
 </style>
