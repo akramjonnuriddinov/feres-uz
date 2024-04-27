@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { openMobile } from '@/composables/openMobile'
+
 const flags = [
   {
     url: 'uz.png',
@@ -17,15 +18,15 @@ const flags = [
 const images = [
   {
     name: 'gerb',
-    url: 'header/gerb.jpg',
+    url: 'gerb.jpg',
   },
   {
     name: 'uz_flag',
-    url: 'header/uz-flag.jpg',
+    url: 'uz-flag.jpg',
   },
   {
     name: 'music',
-    url: 'header/music.png',
+    url: 'music.png',
   },
 ]
 </script>
@@ -61,7 +62,7 @@ const images = [
                 class="flex items-center justify-center w-8 h-8 rounded-full"
               >
                 <img
-                  :src="getImageUrl(image.url)"
+                  :src="image.url"
                   :alt="image.name"
                   class="object-cover w-full h-full rounded-full"
                 />
