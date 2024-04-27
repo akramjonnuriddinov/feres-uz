@@ -210,6 +210,7 @@ const links = ref([
     ],
   },
 ])
+const isOpen = ref(false)
 
 const isInnerLinkLength = (link: any) => {
   return link.innerLinks[0].name.length > 0
@@ -221,29 +222,40 @@ const toggleDropDown = (index: any) => {
   })
   links.value[index].is_show = !links.value[index].is_show
 }
+
+const toggle = () => {
+  isOpen.value = !isOpen.value
+}
 </script>
 
 <template>
-  <div id="navbar" class="w-full text-white z-100 navbar bg-brown">
+  <div
+    id="navbar"
+    class="w-full text-white navbar bg-brown sticky top-0 z-[9999]"
+  >
     <div class="v-container">
       <nav class="px-4 py-2">
         <button
+          @click="toggle"
           class="py-1 px-3 rounded-md text-[#ffffff80] border border-[#ffffff1a] lg:hidden"
         >
           <icon-bars class="w-[30px] h-[30px]" />
         </button>
-        <ul class="flex flex-col lg:justify-center lg:flex-row lg:relative">
-          <li v-for="(link, index) in links" :key="link.name" class="">
-            <nuxt-link
-              :to="link.path"
-              @click="toggleDropDown(index)"
-              :class="{
-                'dropdown-toggle': isInnerLinkLength(link),
-              }"
-              class="inline-block py-2 cursor-pointer lg:px-2 nav-link"
-              >{{ link.name }}</nuxt-link
-            >
-            <transition>
+        <app-transition class="overflow-hidden">
+          <ul
+            v-if="isOpen"
+            class="flex flex-col lg:justify-center lg:flex-row lg:relative"
+          >
+            <li v-for="(link, index) in links" :key="link.name" class="">
+              <nuxt-link
+                :to="link.path"
+                @click="toggleDropDown(index)"
+                :class="{
+                  'dropdown-toggle': isInnerLinkLength(link),
+                }"
+                class="inline-block py-2 cursor-pointer lg:px-2 nav-link"
+                >{{ link.name }}</nuxt-link
+              >
               <ul
                 v-if="isInnerLinkLength(link)"
                 :class="{ hidden: !link.is_show }"
@@ -257,18 +269,31 @@ const toggleDropDown = (index: any) => {
                   >
                 </li>
               </ul>
-            </transition>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </app-transition>
       </nav>
     </div>
   </div>
 </template>
 
 <style scoped>
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
 .navbar {
   box-shadow: 0px 1px 5px 0px rgba(55, 55, 55, 0.3);
 }
+
 .dropdown-toggle::after {
   display: inline-block;
   width: 0;
@@ -280,27 +305,5 @@ const toggleDropDown = (index: any) => {
   border-right: 0.3em solid transparent;
   border-bottom: 0;
   border-left: 0.3em solid transparent;
-}
-
-.v-enter-active,
-.v-leave-active {
-  transition: all 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
-
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
 }
 </style>

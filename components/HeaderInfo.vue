@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="bg-white text-brown">
     <div class="v-container">
@@ -32,5 +30,3 @@
     </div>
   </div>
 </template>
-
-<style scoped></style>
