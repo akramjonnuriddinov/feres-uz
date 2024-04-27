@@ -215,7 +215,7 @@ const toggleDropDown = (id: any) => {
 </script>
 
 <template>
-  <div class="text-white bg-brown">
+  <div class="text-white bg-brown lg:sticky lg:z-50 lg:top-0">
     <div class="v-container">
       <nav class="px-4 py-2">
         <button
@@ -223,7 +223,7 @@ const toggleDropDown = (id: any) => {
         >
           <icon-bars class="w-[30px] h-[30px]" />
         </button>
-        <ul class="flex flex-col lg:justify-center lg:flex-row">
+        <ul class="flex flex-col lg:justify-center lg:flex-row lg:relative">
           <li v-for="link in links" :key="link.name" class="">
             <nuxt-link
               :to="link.path"
@@ -231,13 +231,13 @@ const toggleDropDown = (id: any) => {
               :class="{
                 'dropdown-toggle': isInnerLinkLength(link),
               }"
-              class="inline-block py-2 lg:px-2"
+              class="inline-block py-2 lg:px-2 nav-link"
               >{{ link.name }}</nuxt-link
             >
             <ul
               v-if="isInnerLinkLength(link)"
               :class="{ hidden: !isOpen }"
-              class="min-w-fit max-w-fit bg-brown border border-[#00000026] py-2 rounded"
+              class="min-w-fit max-w-fit bg-brown border border-[#00000026] py-2 rounded lg:absolute"
             >
               <li v-for="innerLink in link.innerLinks" :key="innerLink.name">
                 <nuxt-link
@@ -266,5 +266,14 @@ const toggleDropDown = (id: any) => {
   border-right: 0.3em solid transparent;
   border-bottom: 0;
   border-left: 0.3em solid transparent;
+}
+
+* {
+  transition: all 4s ease !important;
+}
+
+.nav-link:hover + ul {
+  display: block !important;
+  z-index: 100;
 }
 </style>
