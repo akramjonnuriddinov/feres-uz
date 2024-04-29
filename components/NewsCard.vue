@@ -3,40 +3,6 @@
 <template>
   <ul class="flex flex-col lg:flex-row lg:flex-wrap">
     <li v-for="i in 5" class="relative p-4 lg:w-1/2 xl:w-1/3">
-      <div v-if="false">
-        <div
-          class="img-wrapper overflow-hidden flex-col justify-center items-center cursor-pointer relative max-h-[201px] mb-1"
-        >
-          <img
-            class="z-10 object-cover object-center w-full h-full"
-            src="/assets/images/news/news.jpg"
-            alt="news image"
-          />
-        </div>
-        <div class="absolute flex-col p-2">
-          <span
-            class="block font-semibold transition-all duration-300 text-[#ffffff66] mb-4"
-            >24:11:22</span
-          >
-          <h3
-            class="text-[#ffffffe6] mb-2 text-xl transition-all duration-300 line-clamp-2 overflow-hidden"
-          >
-            “FARG‘ONA HETK” AJ TOMONIDAN M HETK” AJ TOMONIDAN M HETK” AJ
-            TOMONIDAN M
-          </h3>
-          <p class="overflow-hidden text-justify line-clamp-4 text-[#ffffff66]">
-            “FARG‘ONA HETK” AJ TOMONIDAN MUQOBIL ENERGIYA MANBALARINI JORIY
-            ETISHGA ALOHIDA E’TIBOR QARATILMOQDA Xabaringiz bor, joriy ALOHIDA
-            E’TIBOR QARATILMOQDA Xabaringiz bor, joriy ALOHIDA E’TIBOR
-            QARATILMOQDA Xabaringiz bor, joriy
-          </p>
-          <div class="text-[#ffffff66] flex">
-            <span>3813</span>
-            <icon-eye class="w-[18px] h-4" />
-          </div>
-          <nuxt-link to="/">Read more</nuxt-link>
-        </div>
-      </div>
       <div class="news__item">
         <div class="overflow-hidden max-h-[201px]">
           <img
