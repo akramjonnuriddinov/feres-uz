@@ -243,8 +243,8 @@ const toggle = () => {
         </button>
         <app-transition class="overflow-hidden">
           <ul
-            v-if="isOpen"
-            class="flex flex-col lg:justify-center lg:flex-row lg:relative"
+            :class="{ 'hidden ': !isOpen, 'flex ': isOpen }"
+            class="flex-col lg:flex lg:justify-center lg:flex-row lg:relative"
           >
             <li v-for="(link, index) in links" :key="link.name" class="">
               <nuxt-link
