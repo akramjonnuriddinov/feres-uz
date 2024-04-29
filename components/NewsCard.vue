@@ -1,8 +1,43 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const newsList = ref([
+  {
+    imgUrl: '',
+    time: '24:11:2022',
+    title:
+      '“FARG‘ONA HETK” AJ TOMONIDAN M “FARG‘ONA HETK” AJ TOMONIDAN M AJ TOMONIDAN M “FARG‘ONA HETK” AJ TOMONIDAN M',
+    text: '“FARG‘ONA HETK1” AJ TOMONIDAN MUQOBIL ENERGIYA MANBALARINI JORIY ETISHGA ALOHIDA E’TIBOR QARATILMOQDA Xabaringiz bor, joriy ....',
+    views: '3813',
+  },
+  {
+    imgUrl: '',
+    time: '24:11:2022',
+    title:
+      '“FARG‘ONA HETK” AJ TOMONIDAN M “FARG‘ONA HETK” AJ TOMONIDAN M AJ TOMONIDAN M “FARG‘ONA HETK” AJ TOMONIDAN M',
+    text: '“FARG‘ONA HETK1” AJ TOMONIDAN MUQOBIL ENERGIYA MANBALARINI JORIY ETISHGA ALOHIDA E’TIBOR QARATILMOQDA Xabaringiz bor, joriy ....',
+    views: '3813',
+  },
+  {
+    imgUrl: '',
+    time: '24:11:2022',
+    title:
+      '“FARG‘ONA HETK” AJ TOMONIDAN M “FARG‘ONA HETK” AJ TOMONIDAN M AJ TOMONIDAN M “FARG‘ONA HETK” AJ TOMONIDAN M',
+    text: '“FARG‘ONA HETK1” AJ TOMONIDAN MUQOBIL ENERGIYA MANBALARINI JORIY ETISHGA ALOHIDA E’TIBOR QARATILMOQDA Xabaringiz bor, joriy ....',
+    views: '3813',
+  },
+  {
+    imgUrl: '',
+    time: '24:11:2022',
+    title:
+      '“FARG‘ONA HETK” AJ TOMONIDAN M “FARG‘ONA HETK” AJ TOMONIDAN M AJ TOMONIDAN M “FARG‘ONA HETK” AJ TOMONIDAN M',
+    text: '“FARG‘ONA HETK1” AJ TOMONIDAN MUQOBIL ENERGIYA MANBALARINI JORIY ETISHGA ALOHIDA E’TIBOR QARATILMOQDA Xabaringiz bor, joriy ....',
+    views: '3813',
+  },
+])
+</script>
 
 <template>
   <ul class="flex flex-col lg:flex-row lg:flex-wrap">
-    <li v-for="i in 5" class="relative p-4 lg:w-1/2 xl:w-1/3">
+    <li v-for="news in newsList" class="relative p-4 lg:w-1/2 xl:w-1/3">
       <div class="news__item">
         <div class="overflow-hidden max-h-[201px]">
           <img
@@ -10,34 +45,32 @@
             class="object-cover object-center w-full h-full news__img"
           />
         </div>
-        <div class="news__date">
-          <p
-            class="block font-semibold transition-all duration-300 text-[#ffffff66] mb-4"
-          >
-            24:11:2022
-          </p>
-        </div>
+        <p
+          class="news__date block font-semibold transition-all duration-300 text-[#ffffff66] mb-4"
+        >
+          {{ news.time }}
+        </p>
         <div class="news__content">
           <h3
             class="news__content_title text-[#ffffffe6] mb-2 text-xl transition-all duration-300 line-clamp-2 overflow-hidden"
           >
-            “FARG‘ONA HETK” AJ TOMONIDAN M “FARG‘ONA HETK” AJ TOMONIDAN M AJ
-            TOMONIDAN M “FARG‘ONA HETK” AJ TOMONIDAN M
+            {{ news.title }}
           </h3>
           <p
             class="news__content_text overflow-hidden text-justify line-clamp-4 text-[#ffffff66]"
           >
-            “FARG‘ONA HETK1” AJ TOMONIDAN MUQOBIL ENERGIYA MANBALARINI JORIY
-            ETISHGA ALOHIDA E’TIBOR QARATILMOQDA Xabaringiz bor, joriy ....
+            {{ news.text }}
           </p>
         </div>
         <div class="news__views">
-          <div class="text-[#ffffff66] flex items-center gap-1">
-            <span>3813</span>
+          <div class="text-[#ffffff66] flex items-center">
+            <span class="mr-1">{{ news.views }}</span>
             <icon-eye class="w-[18px] h-4" />
           </div>
         </div>
-        <nuxt-link to="/" class="read_more btn_nd">Batafsil</nuxt-link>
+        <nuxt-link :to="`/news/${news.title}`" class="read_more btn_nd"
+          >Batafsil</nuxt-link
+        >
       </div>
     </li>
   </ul>
