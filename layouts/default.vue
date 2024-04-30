@@ -11,4 +11,5 @@
       <usefull-resource />
     </div>
   </section>
+  <the-footer />
 </template>

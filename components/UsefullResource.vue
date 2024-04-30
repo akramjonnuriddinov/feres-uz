@@ -6,7 +6,6 @@ import {
   SwiperFreeMode,
   SwiperAutoplay,
   SwiperNavigation,
-  SwiperPagination,
 } from '#imports'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -23,7 +22,6 @@ const modules = [
   SwiperA11y,
   SwiperFreeMode,
   SwiperAutoplay,
-  // SwiperPagination,
 ]
 
 const data = [
