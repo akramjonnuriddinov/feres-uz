@@ -97,7 +97,7 @@ const onSlideChange = () => {}
   </div>
 </template>
 
-<style>
+<style scoped>
 .swiper-item::before {
   content: '';
   position: absolute;
