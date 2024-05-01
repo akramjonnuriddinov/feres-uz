@@ -26,6 +26,11 @@ const modules = [
 
 const data = [
   {
+    name: HuquqiyPortal,
+    path: '#',
+    text: 'National Legal Internet Portal of the Republic of Uzbekistan',
+  },
+  {
     name: Feres,
     path: '#',
     text: '',
@@ -59,7 +64,7 @@ const onSlideChange = () => {}
       :loop="true"
       :modules="modules"
       :navigation="true"
-      :slides-per-view="3"
+      :slides-per-view="4"
       :space-between="64"
       @slideChange="onSlideChange"
       @swiper="onSwiper"

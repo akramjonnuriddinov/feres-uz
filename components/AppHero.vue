@@ -131,23 +131,4 @@ const onSlideChange = () => {}
   background-size: cover;
   background-image: url('/assets/images/swiper/right-arrow.png') !important;
 }
-
-.swiper-pagination-bullet {
-  width: 16px !important;
-  height: 16px !important;
-  border-radius: 4px !important;
-  background-color: rgba(69, 53, 47, 0.4) !important;
-  display: block;
-}
-
-.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  z-index: 1000;
-}
-
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #45352f !important;
-}
 </style>
