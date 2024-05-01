@@ -65,4 +65,10 @@ const ratings = [
   padding: 1.5rem 1.5rem;
   margin: 2rem auto;
 }
+
+@media screen and (min-width: 1200px) {
+  .rating {
+    max-width: 350px;
+  }
+}
 </style>
