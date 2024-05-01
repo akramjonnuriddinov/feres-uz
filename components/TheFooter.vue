@@ -144,15 +144,15 @@ const socials = [
           <h3 class="text-[#ffffffcc] text-xl font-medium mb-2 text-center">
             Subscribe to our news
           </h3>
-          <div class="flex w-full text-base">
+          <div class="flex flex-col w-full text-base sm:flex-row">
             <input
               type="email"
               placeholder="email"
-              class="text-[#495057] leading-[1.75] w-[300px] px-[.75rem] py-[0.375rem] rounded max-w-xl outline-blue-500"
+              class="text-[#495057] mb-4 leading-[1.75] w-[300px] px-[.75rem] py-[0.375rem] rounded max-w-xl outline-blue-500 sm:mb-0 sm:mr-1"
             />
             <button
               type="button"
-              class="px-4 py-2 mx-1 font-medium text-white transition-all duration-200 bg-blue-500 rounded-md"
+              class="px-4 py-2 font-medium text-white transition-all duration-200 bg-blue-500 rounded-md"
             >
               Submit
             </button>
