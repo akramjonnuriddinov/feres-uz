@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { locale } = useI18n()
+</script>
+
 <template>
   <div class="bg-white text-brown">
     <div class="v-container">
@@ -14,7 +18,8 @@
           <div class="flex items-start m-2">
             <icon-phone class="w-6 h-6 m-1" />
             <div class="flex flex-col text-[#373737]">
-              <span>Phone number:</span>
+              <!-- <span>Phone number:</span> -->
+              <span>{{ $t('phone_number') }}</span>
               <a href="tel:+(0 373) 244-38-11">+(0 373) 244-38-11</a>
             </div>
           </div>

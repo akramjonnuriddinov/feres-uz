@@ -20,5 +20,26 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['nuxt-swiper']
+  modules: ['nuxt-swiper', '@nuxtjs/i18n'],
+  i18n: {
+    defaultLocale: "uz",
+    langDir: './locales/',
+    locales: [
+      {
+        code: 'uz',
+        name: 'uz',
+        file: 'uz.ts',
+      },
+      {
+        code: 'en',
+        name: 'en',
+        file: 'en.ts',
+      },
+      {
+        code: 'ru',
+        name: 'ru',
+        file: 'ru.ts',
+      }
+    ]
+  }
 })

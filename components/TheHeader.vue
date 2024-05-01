@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const closeToggle = () => {
-  console.log('hey')
-}
+const closeToggle = () => {}
 </script>
 
 <template>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { openMobile } from '@/composables/openMobile'
+const { locale } = useI18n()
 
 const flags = [
   {
@@ -39,6 +40,7 @@ const images = [
           <ul class="flex items-center">
             <li v-for="flag in flags" :key="flag.lang" class="m-1">
               <button
+                @click="locale = flag.lang"
                 class="flex items-center justify-center w-8 h-8 rounded-full"
               >
                 <img
