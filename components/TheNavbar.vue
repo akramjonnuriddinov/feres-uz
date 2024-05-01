@@ -193,7 +193,7 @@ const links = ref([
     is_show: false,
     innerLinks: [
       {
-        name: 'Info',
+        name: 'Tender and Auction Announcements',
         path: '/info',
       },
     ],
@@ -230,13 +230,14 @@ const toggle = () => {
 
 <template>
   <div
+    @click="$emit('close-toggle')"
     id="navbar"
     class="w-full text-white navbar bg-brown sticky top-0 z-[9999]"
   >
     <div class="v-container">
       <nav class="px-4 py-2">
         <button
-          @click="toggle"
+          @click.stop="toggle"
           class="py-1 px-3 rounded-md text-[#ffffff80] border border-[#ffffff1a] lg:hidden"
         >
           <icon-bars class="w-[30px] h-[30px]" />
