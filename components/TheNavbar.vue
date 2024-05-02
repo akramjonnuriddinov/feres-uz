@@ -1,11 +1,8 @@
 <script setup lang="ts">
 const route = useRoute()
-
-const { locale } = useI18n()
-const { t } = useI18n()
 const links = ref([
   {
-    name: t('home'),
+    name: 'Home',
     path: '/',
     is_show: false,
     innerLinks: [
