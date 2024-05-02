@@ -28,7 +28,7 @@ const ratings = [
       <label
         v-for="rating in ratings"
         :key="rating.id"
-        class="flex items-center mb-2"
+        class="flex items-center mb-2 cursor-pointer"
       >
         <input
           v-model="rate"
