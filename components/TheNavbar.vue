@@ -226,6 +226,18 @@ const toggleDropDown = (index: any) => {
 const toggle = () => {
   isOpen.value = !isOpen.value
 }
+
+const route = useRoute()
+
+// do a `console.log(route)` to see route attributes (fullPath, hash, params, path...)
+watch(
+  () => route.fullPath,
+  async () => {
+    links.value.forEach((link: any, link_idx) => {
+      link.is_show = false
+    })
+  }
+)
 </script>
 
 <template>
