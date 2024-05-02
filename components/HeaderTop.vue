@@ -32,9 +32,12 @@ const images = [
 ]
 
 const isHidden = ref(true)
+const accessibility = ref(false)
 </script>
 
 <template>
+  <app-accessibility @click="accessibility = false" v-if="accessibility" />
+
   <div
     @click="isHidden = true"
     :class="{ '-translate-x-full': isHidden, 'translate-x-0': !isHidden }"
@@ -85,7 +88,7 @@ const isHidden = ref(true)
             </li>
           </ul>
           <div class="flex items-center">
-            <button class="m-1">
+            <button @click="accessibility = true" class="m-1">
               <icon-eye class="w-8 h-7" />
             </button>
             <button @click.prevent="openMobile" class="m-1">

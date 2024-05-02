@@ -27,21 +27,23 @@ const handleClick = (id: any) => {
 </script>
 
 <template>
-  <div class="bg-white border w-[267px] h-[182px] p-2">
-    <h3 class="text-[#343a40] mb-2 font-medium">Ko'rinish</h3>
-    <div class="flex items-start gap-1 mb-4">
-      <button
-        v-for="button in buttons"
-        @click="handleClick(button.name)"
-        :ref="button.name"
-        :key="button.name"
-        :class="button.className"
-        class="px-4 py-2 text-white border-2 border-[#726e6e]"
-      >
-        <icon-image class="w-6 h-6" />
-      </button>
+  <div class="fixed w-full h-full bg-[#0000004d] z-[99999]">
+    <div @click.stop class="bg-white border w-[267px] h-[182px] p-2">
+      <h3 class="text-[#343a40] mb-2 font-medium">Ko'rinish</h3>
+      <div class="flex items-start gap-1 mb-4">
+        <button
+          v-for="button in buttons"
+          @click="handleClick(button.name)"
+          :ref="button.name"
+          :key="button.name"
+          :class="button.className"
+          class="px-4 py-2 text-white border-2 border-[#726e6e]"
+        >
+          <icon-image class="w-6 h-6" />
+        </button>
+      </div>
+      <h3 class="text-[#343a40] mb-2 font-medium">Shrift o'lchami</h3>
     </div>
-    <h3 class="text-[#343a40] mb-2 font-medium">Shrift o'lchami</h3>
   </div>
 </template>
 

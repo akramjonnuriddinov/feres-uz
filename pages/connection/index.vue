@@ -3,7 +3,6 @@
 <template>
   <section class="bg-white">
     <div class="py-12 v-container">
-      <app-accessibility />
       <h2 class="pb-12 mb-2 text-center title">Connection</h2>
       <div
         class="flex flex-col justify-between lg:flex-row lg:justify-between lg:items-start"
