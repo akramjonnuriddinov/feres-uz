@@ -30,9 +30,20 @@ const images = [
     img_url: 'music.png',
   },
 ]
+
+const isHidden = ref(true)
 </script>
 
 <template>
+  <div
+    @click="isHidden = true"
+    :class="{ '-translate-x-full': isHidden, 'translate-x-0': !isHidden }"
+    class="full-screen"
+  >
+    <div class="flex justify-center">
+      <input @click.stop type="text" class="rounded form-control" />
+    </div>
+  </div>
   <div class="text-white bg-brown sm:flex">
     <div class="py-1 v-container">
       <div class="flex justify-center">
@@ -51,7 +62,7 @@ const images = [
               </button>
             </li>
           </ul>
-          <button class="search"></button>
+          <button @click="isHidden = false" class="search"></button>
         </div>
       </div>
     </div>
@@ -109,5 +120,23 @@ const images = [
   height: 1px;
   transform: rotate(40deg);
   background: #ffffff;
+}
+
+.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+}
+
+.form-control {
+  width: 40%;
+  min-width: 200px;
+  padding: 0.3em 0.5em;
+  box-shadow: none;
+  margin: 0.25em;
 }
 </style>
