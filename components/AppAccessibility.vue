@@ -19,9 +19,9 @@ const buttons = ref([
 ])
 
 const handleClick = (id: any) => {
-  if (id == 'grayscale') document.body.classList.add('grayscale')
-  if (id == 'invert') document.body.classList.add('invert')
-  if (id == 'no_image') document.body.classList.add('no_image')
+  if (id == 'grayscale') document.body.classList.toggle('grayscale')
+  if (id == 'invert') document.body.classList.toggle('invert')
+  if (id == 'no_image') document.body.classList.toggle('no_image')
   if (id == 'normal') document.body.className = ''
 }
 </script>
