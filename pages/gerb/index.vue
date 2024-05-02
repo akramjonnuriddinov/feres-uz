@@ -14,3 +14,5 @@ definePageMeta({
     <app-socials />
   </div>
 </template>
+
+<style></style>
