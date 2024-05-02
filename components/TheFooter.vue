@@ -80,8 +80,10 @@ const socials = [
 </script>
 
 <template>
-  <footer class="bg-brown text-[#ffffff80] text-[0.8em] py-12">
-    <div class="v-container">
+  <footer
+    class="bg-brown text-[#ffffff80] text-[0.8em] py-12 footer-section relative overflow-hidden"
+  >
+    <div class="relative z-50 v-container">
       <div class="xl:flex xl:justify-between">
         <div class="md:flex xl:mr-[30px]">
           <div class="flex flex-col md:mr-[30px]">
@@ -161,10 +163,38 @@ const socials = [
         <div class="mt-[22px] font-medium">
           <p>
             2022 FERES| © BARCHA HUQUQLAR HIMOYALANGAN. SAYT MA`LUMOTLARIDAN
-            FOYDALANGANDA FERES.UZ SAYTI KO`RSATILISHI SHART iSoft Company
+            FOYDALANGANDA FERES.UZ SAYTI KO`RSATILISHI SHART inSoft Company
           </p>
         </div>
       </div>
     </div>
   </footer>
 </template>
+
+<style scoped>
+.footer-section::before {
+  content: '';
+  display: block;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  outline: 1px solid rgba(255, 255, 255, 0.6);
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  animation: bgAnimate 50s linear infinite alternate;
+}
+
+.footer-section::after {
+  content: '';
+  display: block;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  outline: 1px solid rgba(255, 255, 255, 0.6);
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  animation: bgAnimate2 50s linear infinite alternate;
+}
+</style>

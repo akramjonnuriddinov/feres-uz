@@ -74,6 +74,19 @@ body {
   background-color: #45352f !important;
 }
 
+.news-section::before {
+  content: '';
+  display: block;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  outline: 1px solid rgba(255, 255, 255, 0.6);
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  animation: bgAnimate 50s linear infinite alternate;
+}
+
 @layer components {
   .title {
     @apply font-medium leading-[1.2] text-[#373737] text-[32px];
@@ -107,5 +120,47 @@ body {
     .v-container {
       max-width: 1140px;
     }
+  }
+}
+
+@keyframes bgAnimate {
+  0% {
+    transform: translate(0%, 0%) rotate(0deg);
+  }
+  20% {
+    transform: translate(-10%, 10%) rotate(90deg);
+  }
+  40% {
+    transform: translate(10%, -20%) rotate(180deg);
+  }
+  60% {
+    transform: translate(-10%, 20%) rotate(90deg);
+  }
+  80% {
+    transform: translate(20%, -10%) rotate(0deg);
+  }
+  100% {
+    transform: translate(20%, 10%) rotate(-90deg);
+  }
+}
+
+@keyframes bgAnimate2 {
+  0% {
+    transform: translate(0%, 0%) rotate(0deg);
+  }
+  20% {
+    transform: translate(10%, -10%) rotate(-90deg);
+  }
+  40% {
+    transform: translate(-10%, 20%) rotate(-180deg);
+  }
+  60% {
+    transform: translate(10%, -20%) rotate(-90deg);
+  }
+  80% {
+    transform: translate(-20%, 10%) rotate(0deg);
+  }
+  100% {
+    transform: translate(10%, 20%) rotate(90deg);
   }
 }
