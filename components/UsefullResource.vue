@@ -33,7 +33,7 @@ const data = [
   {
     name: Feres,
     path: '#',
-    text: '',
+    text: 'Худудий электр тармоклари АЖ',
   },
   {
     name: HuquqiyPortal,
@@ -59,7 +59,7 @@ const onSlideChange = () => {}
 </script>
 
 <template>
-  <div class="carousel">
+  <div class="pb-12 carousel useful-resource">
     <swiper
       :loop="true"
       :modules="modules"
@@ -72,7 +72,7 @@ const onSlideChange = () => {}
       :draggable="true"
       :speed="2000"
       :autoplay="{
-        delay: 3500000,
+        delay: 1500,
         disableOnInteraction: false,
       }"
     >
@@ -80,14 +80,14 @@ const onSlideChange = () => {}
         v-for="slide in data"
         :key="slide.name"
         class="flex flex-col items-end justify-between"
-        style="height: 300px !important"
+        style="height: 200px !important"
       >
         <a
           :href="slide.path"
-          class="flex flex-col justify-between h-full text-center swiper-item"
+          class="flex flex-col items-center justify-between min-h-[200px] h-full text-center swiper-item"
         >
           <img
-            class="flex object-contain w-[100px]"
+            class="flex object-contain w-full h-[100px]"
             loading="lazy"
             :src="slide.name"
             :alt="slide.text"
@@ -100,27 +100,29 @@ const onSlideChange = () => {}
 </template>
 
 <style>
-.swiper-button-prev {
+.useful-resource .swiper-button-prev {
   width: calc(var(--swiper-navigation-size) / 44 * 44) !important;
 }
 
-.swiper-button-next {
+.useful-resource .swiper-button-next {
   width: calc(var(--swiper-navigation-size) / 44 * 44) !important;
 }
 
-.swiper-button-prev:after {
+.useful-resource .swiper-button-prev:after {
   content: 'a' !important;
   width: 100% !important;
   background-repeat: cover;
   background-size: cover;
-  background-image: url('/assets/images/swiper/left-arrow.png') !important;
+  /* background-image: url('/assets/images/swiper/left-arrow.png') !important; */
+  background-image: none !important;
 }
 
-.swiper-button-next:after {
+.useful-resource .swiper-button-next:after {
   content: 'a' !important;
   width: 100% !important;
   background-repeat: cover;
   background-size: cover;
-  background-image: url('/assets/images/swiper/right-arrow.png') !important;
+  /* background-image: url('/assets/images/swiper/right-arrow.png') !important; */
+  background-image: none !important;
 }
 </style>

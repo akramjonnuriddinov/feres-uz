@@ -50,7 +50,7 @@ const onSlideChange = () => {}
 </script>
 
 <template>
-  <div class="carousel">
+  <div class="carousel hero">
     <swiper
       :loop="true"
       :modules="modules"
@@ -97,8 +97,8 @@ const onSlideChange = () => {}
   </div>
 </template>
 
-<style scoped>
-.swiper-item::before {
+<style>
+.hero .swiper-item::before {
   content: '';
   position: absolute;
   top: 0;
@@ -108,15 +108,15 @@ const onSlideChange = () => {}
   background: rgba(55, 55, 55, 0.5);
 }
 
-.swiper-button-prev {
+.hero .swiper-button-prev {
   width: calc(var(--swiper-navigation-size) / 44 * 44) !important;
 }
 
-.swiper-button-next {
+.hero .swiper-button-next {
   width: calc(var(--swiper-navigation-size) / 44 * 44) !important;
 }
 
-.swiper-button-prev:after {
+.hero .swiper-button-prev:after {
   content: 'a' !important;
   width: 100% !important;
   background-repeat: cover;
@@ -124,7 +124,7 @@ const onSlideChange = () => {}
   background-image: url('/assets/images/swiper/left-arrow.png') !important;
 }
 
-.swiper-button-next:after {
+.hero .swiper-button-next:after {
   content: 'a' !important;
   width: 100% !important;
   background-repeat: cover;
