@@ -1,3 +1,4 @@
 export default {
-  phone_number: 'Telefon raqami'
+  phone_number: 'Телефон рақами:',
+  home: 'Бош саҳифа'
 }

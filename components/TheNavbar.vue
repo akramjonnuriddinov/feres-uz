@@ -1,7 +1,11 @@
 <script setup lang="ts">
+const route = useRoute()
+
+const { locale } = useI18n()
+const { t } = useI18n()
 const links = ref([
   {
-    name: 'Home',
+    name: t('home'),
     path: '/',
     is_show: false,
     innerLinks: [
@@ -227,9 +231,6 @@ const toggle = () => {
   isOpen.value = !isOpen.value
 }
 
-const route = useRoute()
-
-// do a `console.log(route)` to see route attributes (fullPath, hash, params, path...)
 watch(
   () => route.fullPath,
   async () => {

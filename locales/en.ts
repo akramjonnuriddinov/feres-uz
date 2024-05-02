@@ -1,3 +1,4 @@
 export default {
-  phone_number: 'Phone number'
+  phone_number: 'Phone number',
+  home: 'Home'
 }

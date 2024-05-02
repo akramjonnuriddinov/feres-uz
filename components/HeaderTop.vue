@@ -18,16 +18,16 @@ const flags = [
 ]
 const images = [
   {
-    name: 'gerb',
-    url: 'gerb.jpg',
+    path: 'gerb',
+    img_url: 'gerb.jpg',
   },
   {
-    name: 'uz_flag',
-    url: 'uz-flag.jpg',
+    path: 'flag',
+    img_url: 'uz-flag.jpg',
   },
   {
-    name: 'music',
-    url: 'music.png',
+    path: 'hymn',
+    img_url: 'music.png',
   },
 ]
 </script>
@@ -59,15 +59,17 @@ const images = [
       <div class="flex justify-center">
         <div class="flex items-center sm:flex-col sm:items-center md:flex-row">
           <ul class="flex items-center">
-            <li v-for="image in images" :key="image.name" class="m-1">
+            <li v-for="image in images" :key="image.path" class="m-1">
               <button
                 class="flex items-center justify-center w-8 h-8 rounded-full"
               >
-                <img
-                  :src="image.url"
-                  :alt="image.name"
-                  class="object-cover w-full h-full rounded-full"
-                />
+                <nuxt-link :to="image.path" class="flex w-full h-full">
+                  <img
+                    :src="image.img_url"
+                    :alt="image.path"
+                    class="object-cover w-full h-full rounded-full"
+                  />
+                </nuxt-link>
               </button>
             </li>
           </ul>
