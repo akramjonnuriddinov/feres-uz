@@ -1,31 +1,7 @@
 <script setup lang="ts">
-import IconFacebook from '@/components/icon/Facebook.vue'
-import IconTwitter from '@/components/icon/Twitter.vue'
-import IconTelegram from '@/components/icon/Telegram.vue'
-import IconOK from '@/components/icon/OK.vue'
-
 definePageMeta({
   layout: 'main',
 })
-
-const socials = [
-  {
-    name: IconFacebook,
-    path: '#',
-  },
-  {
-    name: IconTwitter,
-    path: '#',
-  },
-  {
-    name: IconTelegram,
-    path: '#',
-  },
-  {
-    name: IconOK,
-    path: '#',
-  },
-]
 </script>
 
 <template>
@@ -33,18 +9,9 @@ const socials = [
     <h1
       class="text-center text-[#373737] font-medium pb-4 mb-2 text-[40px] leading-[1.2]"
     >
-      O'zbekiston Respublikasining davlat gerbi
+      State Emblem of the Republic of Uzbekistan
     </h1>
-    <div>
-      <h2 class="mb-2">Ulanish:</h2>
-      <ul class="flex items-center justify-center">
-        <li v-for="social in socials" :key="social.path" class="mx-3">
-          <a :href="social.path" class="social-link">
-            <component :is="social.name" class="w-10 h-10" />
-          </a>
-        </li>
-      </ul>
-    </div>
+    <app-socials />
   </div>
 </template>
 

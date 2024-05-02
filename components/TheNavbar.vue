@@ -278,7 +278,7 @@ watch(
                 <li v-for="innerLink in link.innerLinks" :key="innerLink.name">
                   <nuxt-link
                     :to="innerLink.path"
-                    class="block py-1 px-[1.5rem] whitespace-nowrap"
+                    class="block py-1 px-[1.5rem] whitespace-nowrap transition-all duration-300 hover:bg-[#ffffff1a] hover:text-white"
                     >{{ innerLink.name }}</nuxt-link
                   >
                 </li>
