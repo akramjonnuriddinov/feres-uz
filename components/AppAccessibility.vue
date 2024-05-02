@@ -27,7 +27,9 @@ const handleClick = (id: any) => {
 </script>
 
 <template>
-  <div class="fixed w-full h-full bg-[#0000004d] z-[99999]">
+  <div
+    class="fixed w-full h-full bg-[#0000004d] z-[99999] flex justify-end pt-[80px] pr-4"
+  >
     <div @click.stop class="bg-white border w-[267px] h-[182px] p-2">
       <h3 class="text-[#343a40] mb-2 font-medium">Ko'rinish</h3>
       <div class="flex items-start gap-1 mb-4">
