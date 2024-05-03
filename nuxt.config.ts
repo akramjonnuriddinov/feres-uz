@@ -20,7 +20,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['nuxt-swiper', '@nuxtjs/i18n'],
+  modules: ['nuxt-swiper', '@nuxtjs/i18n', '@pinia/nuxt'],
   i18n: {
     defaultLocale: "uz",
     langDir: './locales/',

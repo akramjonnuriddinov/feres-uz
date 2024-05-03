@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@nuxtjs/i18n": "^8.3.1",
+    "@pinia/nuxt": "^0.5.1",
     "nuxt": "^3.11.2",
     "nuxt-swiper": "^1.2.2",
+    "pinia": "^2.1.7",
     "swiper": "^11.1.1",
     "vue": "^3.4.21",
     "vue-inline-svg": "^2.1.3",

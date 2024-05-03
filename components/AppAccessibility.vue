@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 const buttons = ref([
   {
     name: 'normal',
@@ -18,11 +18,21 @@ const buttons = ref([
   },
 ])
 
-const handleClick = (id: any) => {
+const handleClick = (id) => {
   if (id == 'grayscale') document.body.classList.toggle('grayscale')
   if (id == 'invert') document.body.classList.toggle('invert')
   if (id == 'no_image') document.body.classList.toggle('no_image')
   if (id == 'normal') document.body.className = ''
+}
+
+const changeZoom = (factor) => {
+  const currentZoom = parseFloat(document.body.style.zoom) || 1
+  const newZoom = currentZoom + factor * 0.1
+  document.body.style.zoom = newZoom
+}
+
+const currentZoom = () => {
+  document.body.style.zoom = 1
 }
 </script>
 
@@ -30,7 +40,7 @@ const handleClick = (id: any) => {
   <div
     class="fixed w-full h-full bg-[#0000004d] z-[99999] flex justify-end pt-[80px] pr-4"
   >
-    <div @click.stop class="bg-white border w-[267px] h-[182px] p-2">
+    <div @click.stop class="bg-white border w-[267px] h-[190px] p-2">
       <h3 class="text-[#343a40] mb-2 font-medium">Ko'rinish</h3>
       <div class="flex items-start gap-1 mb-4">
         <button
@@ -45,11 +55,34 @@ const handleClick = (id: any) => {
         </button>
       </div>
       <h3 class="text-[#343a40] mb-2 font-medium">Shrift o'lchami</h3>
+      <div>
+        <button
+          @click="changeZoom(-1)"
+          class="px-4 py-2 mx-2 border-2 border-black text-[0.6em] transition-all duration-300 bg-[#F0F0F0] focus:rounded-sm"
+        >
+          A-
+        </button>
+        <button
+          @click="currentZoom"
+          class="px-4 py-2 mx-2 border-2 border-black text-[0.em] transition-all duration-300 bg-[#F0F0F0] focus:rounded-sm"
+        >
+          A
+        </button>
+        <button
+          @click="changeZoom(1)"
+          class="px-4 py-2 mx-2 border-2 border-black text-[1.2em] transition-all duration-300 bg-[#F0F0F0] focus:rounded-sm"
+        >
+          A+
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <style>
+body {
+  transition: all 0.4s ease;
+}
 body.grayscale {
   filter: grayscale(100%);
 }
