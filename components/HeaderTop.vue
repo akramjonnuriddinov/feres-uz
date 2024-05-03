@@ -40,7 +40,7 @@ const accessibility = ref(false)
 
   <div
     @click="isHidden = true"
-    :class="{ '-translate-x-full': isHidden, 'translate-x-0': !isHidden }"
+    :class="{ '-translate-y-full': isHidden, 'translate-y-0': !isHidden }"
     class="full-screen"
   >
     <div class="flex justify-center">

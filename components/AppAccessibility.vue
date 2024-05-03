@@ -80,7 +80,7 @@ const currentZoom = () => {
 </template>
 
 <style>
-body {
+* {
   transition: all 0.4s ease;
 }
 body.grayscale {
