@@ -13,13 +13,13 @@ onMounted(() => {
 <template>
   <div
     v-if="isMobile"
-    class="fixed mobile h-screen bg-[#A5ABB8] p-10 flex justify-center top-0 bottom-0 left-0 right-0 z-[99999]"
+    class="fixed mobile h-screen bg-[#A5ABB8] p-10 pb-0 flex justify-center top-0 bottom-0 left-0 right-0 z-[99999]"
   >
     <iframe :src="siteUrl" width="520" height="100%" frameborder="0"></iframe>
   </div>
   <div
     v-else-if="isTablet"
-    class="fixed h-screen bg-[#A5ABB8] p-5 flex justify-center top-0 bottom-0 left-0 right-0 z-[99999]"
+    class="fixed h-screen bg-[#A5ABB8] p-5 pb-0 flex justify-center top-0 bottom-0 left-0 right-0 z-[99999]"
   >
     <iframe :src="siteUrl" width="920" height="100%" frameborder="0"></iframe>
   </div>
