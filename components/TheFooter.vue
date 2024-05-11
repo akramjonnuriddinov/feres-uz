@@ -4,7 +4,34 @@ import IconYoutube from '@/components/icon/Youtube.vue'
 import IconInstagram from '@/components/icon/Instagram.vue'
 import IconTwitter from '@/components/icon/Twitter.vue'
 
-const footerLinks = [
+interface FooterLink {
+  name: string
+  path: string
+}
+interface Social {
+  name: any
+  path: string
+}
+
+const socials: Social[] = [
+  {
+    name: IconYoutube,
+    path: '#',
+  },
+  {
+    name: IconFacebook,
+    path: '#',
+  },
+  {
+    name: IconTwitter,
+    path: '#',
+  },
+  {
+    name: IconInstagram,
+    path: '#',
+  },
+]
+const footerLinks: FooterLink[] = [
   {
     name: 'History of JSC "Fergana Regional Electric Networks Enterprise',
     path: '/',
@@ -56,25 +83,6 @@ const footerLinks = [
   {
     name: 'Collegial and advisory bodies formed in society',
     path: '/',
-  },
-]
-
-const socials = [
-  {
-    name: IconYoutube,
-    path: '#',
-  },
-  {
-    name: IconFacebook,
-    path: '#',
-  },
-  {
-    name: IconTwitter,
-    path: '#',
-  },
-  {
-    name: IconInstagram,
-    path: '#',
   },
 ]
 </script>
