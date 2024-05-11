@@ -1,5 +1,13 @@
 <script setup lang="ts">
-const newsList = ref([
+interface NewsList {
+  imgUrl: string
+  time: string
+  title: string
+  text: string
+  views: string
+}
+
+const newsList = ref<NewsList[]>([
   {
     imgUrl: '',
     time: '24:11:2022',
