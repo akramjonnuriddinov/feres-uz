@@ -1,6 +1,14 @@
 <script setup lang="ts">
 const route = useRoute()
-const links = ref([
+
+interface Link {
+  name: string
+  path: string
+  is_show: boolean
+  innerLinks: { name: string; path: string }[]
+}
+
+const links = ref<Link[]>([
   {
     name: 'Home',
     path: '/',
@@ -211,14 +219,15 @@ const links = ref([
     ],
   },
 ])
+
 const isOpen = ref(false)
 
-const isInnerLinkLength = (link: any) => {
+const isInnerLinkLength = (link: Link) => {
   return link.innerLinks[0].name.length > 0
 }
 
-const toggleDropDown = (index: any) => {
-  links.value.forEach((link: any, link_idx) => {
+const toggleDropDown = (index: number) => {
+  links.value.forEach((link: Link, link_idx) => {
     if (index != link_idx) link.is_show = false
   })
   links.value[index].is_show = !links.value[index].is_show
